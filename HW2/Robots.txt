@@ -1,0 +1,14 @@
+1.
+Fetch 
+RobotJackal 
+robotTurtle
+BotBosten Dynamic Handle Robot
+Bosten Dynamic ATLAS Robot
+
+2.
+Fetch Robot: It contains RGBD camera which allows robot to see the world. It has amanipulator that can grasp a lot of things. It has the ability of moving one point toanother point.
+
+3.
+Challenge 1: decorate the house on holiday. 
+Challenge 2: find the thing I forget whereit is. 
+Challenge 3: hang the laundry

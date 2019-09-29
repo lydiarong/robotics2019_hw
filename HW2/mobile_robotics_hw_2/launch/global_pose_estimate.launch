@@ -1,0 +1,5 @@
+<launch>
+    <arg name="path" default="/home/lima-yz/Desktop/hw2_ws/src/HW2/mobile_robotics_hw_2"/>
+    <node name="player" pkg="rosbag" type="play" args="--clock $(arg path)/odometry.bag"/>
+    <node name="mobile_robotics_hw_2_node" pkg="mobile_robotics_hw_2" type="mobile_robotics_hw_2_node" output="screen"/>
+</launch>
