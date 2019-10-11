@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- This file can be edited to provide non-standard accessories. There
+       must be a file in the config folder that sets the required variable to 1.
+       The accessory can then be enabled by setting the 'config' argument in the
+       launch files. -->
+  
+  
+  <!-- Box with AprilTag markers on each face. -->
+  <xacro:if value="$(optenv JACKAL_APRILTAG 0)">
+    <xacro:include filename="accessories/apriltag_box.urdf.xacro" />
+  </xacro:if>
+  
+
+
+  <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
+  <HDL-32E parent="base_link" name="velodyne2" topic="/velodyne_points2" hz="10" samples="219" gpu="false">
+    <origin xyz="0 0 0.2" rpy="0 0 0" />
+  </HDL-32E>
+
+  
+</robot>
