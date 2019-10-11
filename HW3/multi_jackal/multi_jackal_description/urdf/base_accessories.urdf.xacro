@@ -49,7 +49,7 @@
       <child link="$(optenv JACKAL_FLEA_MOUNT front)_camera_mount" />
     </joint>
 
-    <pointgrey_flea3 frame="$(optenv JACKAL_FLEA3_MOUNT front)_camera" name="$(optenv JACKAL_FLEA_NAME front)"
+    <pointgrey_flea3 frame="$(optenv JACKAL_FLEA3_MOUNT front)_camera" name="$(optenv JACKAL_FLEA_NAME camera)"
       camera_x="0.0754" camera_y="0.029" camera_z="0.035"
       camera_mass="0.085" hfov="1.0471975512" fps="60" width="640" height="512"/>
     <joint name="$(optenv JACKAL_FLEA3_MOUNT front)_camera_bracket_joint" type="fixed">

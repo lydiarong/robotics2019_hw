@@ -124,7 +124,8 @@
             </noise>
           </ray>
           <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_velodyne_laser.so">
-            <topicName>${topic}</topicName>
+            <robotNamespace>/$(arg namespace)</robotNamespace>
+            <topicName>velodyne/${topic}</topicName>
             <frameName>${name}</frameName>
             <min_range>${min_range}</min_range>
             <max_range>${max_range}</max_range>

@@ -23,7 +23,4 @@
     <arg name="config" value="$(arg config)" />
   </include>
 
-  <!-- Spawn Jackal -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-	      args="-urdf -model jackal -param robot_description -x 0 -y 0 -z 1.0" />
 </launch>

@@ -3,7 +3,8 @@ Panels:
     Help Height: 0
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /Image1
       Splitter Ratio: 0.563889027
     Tree Height: 602
   - Class: rviz/Selection
@@ -235,8 +236,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 2.43060255
-        Min Value: -0.0721735656
+        Max Value: 2.43356562
+        Min Value: -0.0724059343
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -257,7 +258,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.100000001
       Style: Points
-      Topic: /velodyne_points2
+      Topic: /jackal0/velodyne/velodyne_points2
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -286,7 +287,7 @@ Visualization Manager:
       Zoom Factor: 1
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /jackal0/front/image_raw
+      Image Topic: /jackal0/camera/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
