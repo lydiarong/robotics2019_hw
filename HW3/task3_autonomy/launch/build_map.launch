@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Launch the control portion of the Jackal robot. -->
+  <include file="$(find task2_robot_model)/launch/gazebo.launch">
+  </include>
+
+<include file="$(find task3_autonomy)/launch/sample_node.launch">
+  </include>
+
+<include file="$(find task3_autonomy)/launch/gmapping.launch">
+  </include>
+</launch>
