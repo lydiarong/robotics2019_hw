@@ -1,0 +1,8 @@
+<launch>
+<arg name="ns"        default="jackal0"/>
+ 
+<!-- View in RVIZ. -->
+    <node name="jackal_viz" pkg="rviz" type="rviz" ns="$(arg ns)" args="-d $(find task4_vis_data)/rviz/jackal_viz.rviz" >
+      <remap from="/move_base_simple/goal" to="/$(arg ns)/move_base_simple/goal"/>
+    </node>
+</launch>

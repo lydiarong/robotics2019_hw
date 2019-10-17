@@ -1,0 +1,47 @@
+<launch>
+<arg name="ns"        default="jackal0"/>
+  <arg name="config_id" default="0"/>
+  <arg name="rviz"      default="true"/>
+
+  <arg name="use_sim_time" default="true" />
+  <arg name="gui" default="true" />
+  <arg name="headless" default="false" />
+  <arg name="world_name" default="$(find task1_simulated_world)/worlds/indoor_room.world"/>
+  <arg name="build_map" default="false"/>
+
+  <!-- Configuration of Jackal which you would like to simulate.
+       See jackal_description for details. -->
+  <arg name="config" default="front_flea3" />
+
+  <!-- Launch Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="0" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="use_sim_time" value="$(arg use_sim_time)" />
+    <arg name="headless" value="$(arg headless)" />
+    <arg name="world_name" value="$(arg world_name)" />
+  </include>
+
+ <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
+    <arg name="ns"            value="$(arg ns)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="config_id"     value="$(arg config_id)"/>
+    <arg name="use_move_base" value="true"/>
+    <arg name="use_global_tf" value="false"/>
+  </include>
+
+ <include file="$(find task3_autonomy)/launch/sample_node.launch">
+  </include>
+
+ <include file="$(find task3_autonomy)/launch/include/amcl.launch">
+  </include>
+
+<node name="map_server" pkg="map_server" type="map_server" args="$(find task3_autonomy)/maps/indoor_map.yaml"/>
+
+<!-- View in RVIZ. -->
+  <group if="$(arg rviz)">
+    <include file="$(find task4_vis_data)/launch/rviz.launch">
+  </include>
+  </group>
+
+</launch>

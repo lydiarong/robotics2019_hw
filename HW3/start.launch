@@ -40,9 +40,8 @@
 
 <!-- View in RVIZ. -->
   <group if="$(arg rviz)">
-    <node name="rviz" pkg="rviz" type="rviz" ns="$(arg ns)" args="-d $(find multi_jackal_tutorials)/rviz/one_jackal.rviz" >
-      <remap from="/move_base_simple/goal" to="/$(arg ns)/move_base_simple/goal"/>
-    </node>
+    <include file="$(find task4_vis_data)/launch/rviz.launch">
+  </include>
   </group>
 
 </launch>

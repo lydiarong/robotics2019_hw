@@ -5,6 +5,7 @@
      
 <launch>
   <!-- Arguments to set the namespace, start position. -->
+<arg name="odom_nav"  default="false"/>
   <arg name="ns"        default="jackal0"/>			<!-- Must be unique for each robot. -->
   <arg name="x"         default="0"/>
   <arg name="y"         default="0"/>
@@ -46,6 +47,7 @@
     <arg name="use_move_base"  value="$(arg use_move_base)"/>
     <arg name="use_global_tf"  value="$(arg use_global_tf)"/>
     <arg name="use_global_ekf" value="$(arg use_global_ekf)"/>
+ <arg name="odom_nav"       value="$(arg odom_nav)"/>
   </include>
 
   <!-- Spawn the model into gazebo. -->
