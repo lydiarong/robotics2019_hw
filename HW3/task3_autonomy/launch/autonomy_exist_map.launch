@@ -27,15 +27,15 @@
     <arg name="config_id"     value="$(arg config_id)"/>
     <arg name="use_move_base" value="true"/>
     <arg name="use_global_tf" value="false"/>
-<arg name="odom_nav"  value="false"/>
   </include>
 
  <include file="$(find task3_autonomy)/launch/sample_node.launch">
   </include>
 
-<include file="$(find task3_autonomy)/launch/gmapping.launch">
+ <include file="$(find task3_autonomy)/launch/include/amcl.launch">
   </include>
 
+<node name="map_server" pkg="map_server" type="map_server" args="$(find task3_autonomy)/maps/indoor_map.yaml"/>
 
 <!-- View in RVIZ. -->
   <group if="$(arg rviz)">
