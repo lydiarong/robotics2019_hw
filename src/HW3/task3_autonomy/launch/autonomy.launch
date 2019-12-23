@@ -6,7 +6,7 @@
   <arg name="use_sim_time" default="true" />
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
-  <arg name="world_name" default="$(find task1_simulated_world)/worlds/indoor_room.world"/>
+  <arg name="world_name" default="$(find task1_simulated_world)/worlds/indoor_map.world"/>
 
   <!-- Configuration of Jackal which you would like to simulate.
        See jackal_description for details. -->
@@ -27,6 +27,8 @@
     <arg name="config_id"     value="$(arg config_id)"/>
     <arg name="use_move_base" value="true"/>
     <arg name="use_global_tf" value="false"/>
+  <arg name="x"         value="1"/>
+  <arg name="y"         value="2"/>
 <arg name="odom_nav"  value="false"/>
   </include>
 
